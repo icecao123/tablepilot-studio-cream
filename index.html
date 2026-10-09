@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TablePilot — Digital Design Studio | Modern Websites for New Businesses</title>
+<meta name="description" content="TablePilot is a digital design studio crafting modern, professional, responsive websites for new businesses. Portfolio demonstration — no official affiliation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23A06A35'/%3E%3Cpath d='M8 21.5 16 9l8 12.5h-4.2L16 14.4l-3.8 7.1z' fill='%23FAF6EE'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link href="https://miaoda.feishu.cn/fonts/css2?family=Playfair+Display:wght@500;600;700&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF6EE;
+  --bg-soft:#F4EEE2;
+  --ink:#3A2E25;
+  --muted:#7C6E5F;
+  --line:rgba(58,46,37,.16);
+  --gold:#A06A35;
+  --gold-soft:rgba(160,106,53,.13);
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Noto Sans',-apple-system,'Segoe UI','Helvetica Neue','PingFang SC','Microsoft YaHei',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:#FAF6EE}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:600;line-height:1.15}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(250,246,238,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand svg{flex-shrink:0}
+.brand-name{font-family:var(--serif);font-size:19px;letter-spacing:.02em}
+.brand-name span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:13.5px;letter-spacing:.04em;color:var(--muted);transition:color .25s}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-size:14px;font-weight:500;letter-spacing:.03em;transition:all .25s;cursor:pointer;border:1px solid transparent}
+.btn svg{width:14px;height:14px;transition:transform .25s}
+.btn:hover svg{transform:translateX(3px)}
+.btn-gold{background:var(--gold);color:#FAF6EE;box-shadow:0 8px 22px rgba(160,106,53,.28)}
+.btn-gold:hover{background:#8F5E2E}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;color:var(--ink);width:42px;height:42px;align-items:center;justify-content:center;cursor:pointer}
+.menu-btn svg{width:20px;height:20px}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:96px 0 88px}
+.hero h1{font-size:clamp(40px,5.6vw,66px);letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{margin:22px 0 34px;font-size:17px;color:var(--muted);max-width:52ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-proof{display:flex;flex-wrap:wrap;gap:22px 34px;margin-top:52px;padding-top:30px;border-top:1px solid var(--line)}
+.proof{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:10px}
+.proof b{color:var(--ink);font-weight:600;font-size:15px}
+.hero-media{position:relative}
+.hero-media .frame{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px rgba(95,72,45,.18)}
+.hero-media img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.hero-tag{position:absolute;left:-18px;bottom:26px;background:#FFFFFF;border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:0 18px 40px rgba(95,72,45,.16)}
+.hero-tag .t1{font-family:var(--serif);font-size:20px;color:var(--gold)}
+.hero-tag .t2{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* ===== Sections ===== */
+section{padding:92px 0}
+.sec-head{max-width:640px;margin-bottom:52px}
+.sec-head h2{font-size:clamp(30px,3.6vw,42px);margin-top:12px}
+.sec-head p{margin-top:14px;color:var(--muted);font-size:15.5px}
+.alt{background:var(--bg-soft)}
+
+/* ===== Why us ===== */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why-card{border:1px solid var(--line);border-radius:18px;padding:28px 26px;background:#FFFFFF;box-shadow:0 14px 30px rgba(95,72,45,.07);transition:transform .3s,box-shadow .3s,border-color .3s}
+.why-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 22px 44px rgba(95,72,45,.12)}
+.why-card .num{font-family:var(--serif);font-size:15px;color:var(--gold);letter-spacing:.08em}
+.why-card h3{font-size:18px;margin:12px 0 8px}
+.why-card p{font-size:13.5px;color:var(--muted)}
+.why-card svg{width:26px;height:26px;stroke:var(--gold);margin-top:6px}
+
+/* ===== Services ===== */
+.svc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.svc{background:#FFFFFF;padding:34px 32px;position:relative}
+.svc h3{font-size:21px;display:flex;align-items:baseline;gap:12px}
+.svc h3 i{font-style:normal;font-family:var(--serif);color:var(--gold);font-size:14px}
+.svc p{color:var(--muted);font-size:14px;margin-top:10px;max-width:46ch}
+.svc .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.svc .tag{font-size:11.5px;letter-spacing:.05em;color:var(--gold);border:1px solid var(--gold-soft);background:var(--gold-soft);padding:5px 11px;border-radius:999px}
+
+/* ===== Work ===== */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.work{display:block;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#FFFFFF;box-shadow:0 14px 30px rgba(95,72,45,.07);transition:transform .35s,box-shadow .35s,border-color .35s}
+.work:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 26px 50px rgba(95,72,45,.13)}
+.work-img{position:relative;overflow:hidden;aspect-ratio:3/2}
+.work-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.work:hover .work-img img{transform:scale(1.05)}
+.work-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(95,72,45,.55))}
+.work-tag{position:absolute;top:16px;left:16px;z-index:2;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:rgba(255,255,255,.88);border:1px solid var(--line);padding:6px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+.work-body{padding:22px 24px 26px}
+.work-body h3{font-size:21px}
+.work-body p{color:var(--muted);font-size:13.5px;margin-top:6px}
+.work-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.work-meta span{font-size:11.5px;color:var(--gold);border:1px solid var(--gold-soft);padding:4px 10px;border-radius:999px}
+
+/* ===== Platform ===== */
+.plat-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;margin-bottom:44px}
+.plat-intro .lead{font-size:16px;color:var(--muted)}
+.rec-box{border:1px solid var(--gold);border-radius:18px;padding:26px;background:var(--gold-soft)}
+.rec-box h4{font-family:var(--serif);font-size:19px;color:var(--gold)}
+.rec-box p{font-size:13.5px;color:var(--muted);margin-top:8px}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
+thead th{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:left;padding:14px 16px;border-bottom:1px solid var(--line)}
+tbody td{font-size:13.5px;color:var(--muted);padding:16px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+th:first-child,td:first-child{color:var(--ink)}
+td .tick{color:var(--gold)}
+.rec-row{background:var(--gold-soft)}
+.rec-row td{color:var(--ink)}
+
+/* ===== Process ===== */
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;counter-reset:step}
+.step{border:1px solid var(--line);border-radius:16px;padding:24px 20px;position:relative;background:#FFFFFF;box-shadow:0 10px 24px rgba(95,72,45,.06)}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--serif);font-size:15px;color:var(--gold)}
+.step h3{font-size:16px;margin:12px 0 6px}
+.step p{font-size:12.5px;color:var(--muted)}
+
+/* ===== Contact ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-copy p{color:var(--muted);font-size:15px;margin-top:14px;max-width:46ch}
+.contact-list{margin-top:28px;list-style:none;display:grid;gap:14px}
+.contact-list li{display:flex;gap:14px;align-items:flex-start;font-size:14px;color:var(--muted)}
+.contact-list svg{width:18px;height:18px;stroke:var(--gold);flex-shrink:0;margin-top:2px}
+.contact-list b{color:var(--ink);font-weight:600}
+form{display:grid;gap:16px}
+.field label{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.field input,.field textarea{width:100%;background:#FFFFFF;border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:13px 15px;font:inherit;font-size:14px;outline:none;transition:border-color .25s,box-shadow .25s}
+.field input:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(160,106,53,.12)}
+.field textarea{resize:vertical;min-height:110px}
+.form-note{font-size:12px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(80px);background:#FFFFFF;border:1px solid var(--gold);color:var(--ink);padding:14px 22px;border-radius:12px;font-size:14px;z-index:99;opacity:0;transition:all .4s;box-shadow:0 18px 40px rgba(95,72,45,.2)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ===== Footer ===== */
+footer{border-top:1px solid var(--line);padding:46px 0 34px}
+.foot{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+.foot .demo{font-size:12px;color:var(--muted);max-width:56ch}
+.foot-copy{margin-top:26px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+
+/* ===== Reveal ===== */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ===== Responsive ===== */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px;padding:70px 0 64px}
+  .hero-tag{left:14px;bottom:-16px}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .plat-intro{grid-template-columns:1fr;gap:28px}
+  .process{grid-template-columns:repeat(3,1fr)}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:760px){
+  .nav-links{position:fixed;inset:0;top:68px;background:var(--bg);flex-direction:column;gap:6px;padding:28px 24px;transform:translateX(100%);transition:transform .35s ease;z-index:49}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:14px 0;font-size:16px;width:100%;border-bottom:1px solid var(--line)}
+  .nav-links .btn{margin-top:16px}
+  .menu-btn{display:inline-flex}
+  .why-grid{grid-template-columns:1fr}
+  .svc-list,.work-grid{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr 1fr}
+  section{padding:70px 0}
+  thead th,td{padding:11px 10px;font-size:12px}
+}
+@media (max-width:480px){
+  .process{grid-template-columns:1fr}
+  .hero h1{font-size:38px}
+  .hero-proof{gap:16px 26px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="TablePilot home">
+      <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#A06A35"/><path d="M9 21.5 16 9.5l7 12h-3.7L16 14.6l-3.3 6.9z" fill="#FAF6EE"/></svg>
+      <span class="brand-name">Table<span>Pilot</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#why">Why us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-gold" href="#contact">Start a project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== Hero ===== -->
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <p class="eyebrow">Digital design studio · Portfolio demonstration</p>
+      <h1>Modern websites that give a <em>new business</em> instant credibility.</h1>
+      <p class="hero-sub">TablePilot is a digital design studio helping emerging businesses launch clean, professional, responsive websites — designed around your brand, your customers and your goals.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#work">View our work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#contact">Book a discovery call</a>
+      </div>
+      <div class="hero-proof">
+        <span class="proof"><b>Mobile &amp; tablet</b> responsive by default</span>
+        <span class="proof"><b>Brand-first</b> typography &amp; colour</span>
+        <span class="proof"><b>Fast, reliable</b> turnaround</span>
+      </div>
+    </div>
+    <div class="hero-media reveal in">
+      <div class="frame"><img src="assets/hero.webp" alt="TablePilot studio desk with laptop, coffee and warm lamp light"></div>
+      <div class="hero-tag">
+        <div class="t1">From idea to launch</div>
+        <div class="t2">Strategy · Design · Build</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why us ===== -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why TablePilot</p>
+      <h2>What a new business actually needs from a website partner</h2>
+      <p>Six commitments we hold on every project — whether it is your first site or your fifth.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="num">01</span>
+        <h3>Modern &amp; professional</h3>
+        <p>Designs that look established on day one — no templates, no generic layouts, no shortcuts.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="num">02</span>
+        <h3>Clean, user-friendly layout</h3>
+        <p>Clear hierarchy, intuitive navigation and a calm interface that helps customers take action.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="num">03</span>
+        <h3>Responsive everywhere</h3>
+        <p>Every layout is designed mobile-first and tested on phones, tablets and desktop before launch.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="num">04</span>
+        <h3>Branding with intent</h3>
+        <p>Typography, colour, spacing and imagery work as one system — your brand, consistently expressed.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="num">05</span>
+        <h3>Creative suggestions</h3>
+        <p>We bring ideas, not just instructions — options, rationale and honest recommendations at every step.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="num">06</span>
+        <h3>Clear communication</h3>
+        <p>Regular updates, plain-language feedback and a reliable turnaround you can plan around.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What we do</p>
+      <h2>Services for businesses getting off the ground</h2>
+      <p>From a single landing page to a full brand-and-website package, scoped to your budget.</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc reveal">
+        <h3><i>01</i>Brand identity</h3>
+        <p>Logo, colour system, typography and tone of voice — a coherent identity your customers remember.</p>
+        <div class="tags"><span class="tag">Logo</span><span class="tag">Colour system</span><span class="tag">Brand guidelines</span></div>
+      </div>
+      <div class="svc reveal">
+        <h3><i>02</i>Website design</h3>
+        <p>Mobile-first UX and UI design for service-based businesses — home, about, services and contact built around conversion.</p>
+        <div class="tags"><span class="tag">UX / UI</span><span class="tag">Wireframes</span><span class="tag">Prototypes</span></div>
+      </div>
+      <div class="svc reveal">
+        <h3><i>03</i>Web development</h3>
+        <p>Fast, accessible front-end builds with the platform that fits your business — including interactive ordering and booking flows.</p>
+        <div class="tags"><span class="tag">Responsive build</span><span class="tag">Interactions</span><span class="tag">Performance</span></div>
+      </div>
+      <div class="svc reveal">
+        <h3><i>04</i>Launch &amp; growth</h3>
+        <p>Go-live support, SEO foundations and post-launch refinements so the site keeps working as your business grows.</p>
+        <div class="tags"><span class="tag">SEO</span><span class="tag">Analytics</span><span class="tag">Ongoing care</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Work ===== -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Selected work</p>
+      <h2>Concept designs from our portfolio</h2>
+      <p>Four recent concept projects, each built as a full interactive prototype. All product details and prices are unverified demo content.</p>
+    </div>
+    <div class="work-grid">
+      <a class="work reveal" href="#contact" aria-label="Esquires Coffee concept case study">
+        <div class="work-img"><span class="work-tag">Concept</span><img src="assets/case-coffee.webp" alt="Espresso coffee cup on dark wood with warm light — Esquires Coffee concept"></div>
+        <div class="work-body">
+          <h3>Esquires Coffee</h3>
+          <p>Specialty café ordering site with menu categories, drink customisation and a live basket.</p>
+          <div class="work-meta"><span>UK Café</span><span>Online ordering</span><span>Customisable menu</span></div>
+        </div>
+      </a>
+      <a class="work reveal" href="#contact" aria-label="PizzaExpress concept case study">
+        <div class="work-img"><span class="work-tag">Concept</span><img src="assets/case-pizza.webp" alt="Margherita pizza on dark slate with basil — PizzaExpress concept"></div>
+        <div class="work-body">
+          <h3>PizzaExpress</h3>
+          <p>Mobile-first restaurant ordering experience with featured products and category browsing.</p>
+          <div class="work-meta"><span>Restaurant</span><span>Mobile-first</span><span>Interactive</span></div>
+        </div>
+      </a>
+      <a class="work reveal" href="#contact" aria-label="SweetE Bakery case study">
+        <div class="work-img"><span class="work-tag">Concept</span><img src="assets/case-bakery.webp" alt="Golden croissant with wheat on dark wood — SweetE Bakery concept"></div>
+        <div class="work-body">
+          <h3>SweetE Bakery</h3>
+          <p>Bakery ordering demo with product details, cake customisation and a reliable checkout flow.</p>
+          <div class="work-meta"><span>Bakery</span><span>eCommerce demo</span><span>Checkout flow</span></div>
+        </div>
+      </a>
+      <a class="work reveal" href="#contact" aria-label="Jiangxi Xiaochao case study">
+        <div class="work-img"><span class="work-tag">Concept</span><img src="assets/case-chinese.webp" alt="Sizzling stir-fry dish with chopsticks on dark wood — Jiangxi Xiaochao concept"></div>
+        <div class="work-body">
+          <h3>Jiangxi Xiaochao</h3>
+          <p>Chinese restaurant ordering suite — digital menus, table booking and cart experiences in one.</p>
+          <div class="work-meta"><span>Chinese restaurant</span><span>Ordering suite</span><span>Bilingual</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Platform ===== -->
+<section id="platform" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Platform advice</p>
+      <h2>Which platform for a new business website?</h2>
+      <p>A quick comparison to guide the decision. Our usual recommendation for service businesses: <b style="color:var(--ink)">Webflow</b> — then tailor the choice to your needs.</p>
+    </div>
+    <div class="plat-intro">
+      <div class="plat-intro reveal">
+        <p class="lead">There is no single “best” platform — the right choice depends on your content, budget and growth plans. Below is how we weigh the four most common options for a brand-new service business.</p>
+      </div>
+      <div class="rec-box reveal">
+        <h4>Our recommendation: Webflow</h4>
+        <p>Best balance of design freedom, content management and speed-to-launch for a new service business. WordPress suits content-heavy or budget-sensitive projects; Shopify wins for e-commerce from day one.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <table>
+        <colgroup><col style="width:18%"><col style="width:21%"><col style="width:21%"><col style="width:19%"><col style="width:21%"></colgroup>
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Best for</th>
+            <th>Design freedom</th>
+            <th>Cost &amp; upkeep</th>
+            <th>Speed to launch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rec-row">
+            <td>Webflow</td>
+            <td>Design-led service sites</td>
+            <td class="tick">High — pixel-level control</td>
+            <td>Monthly plan · low upkeep</td>
+            <td class="tick">Fast — no hosting to manage</td>
+          </tr>
+          <tr>
+            <td>WordPress</td>
+            <td>Content-heavy &amp; budget-conscious</td>
+            <td>Medium — themes &amp; plugins</td>
+            <td>Cheapest long-term · more upkeep</td>
+            <td>Medium — more configuration</td>
+          </tr>
+          <tr>
+            <td>Shopify</td>
+            <td>E-commerce from day one</td>
+            <td>Medium — strong store toolkit</td>
+            <td>Transaction fees apply</td>
+            <td>Fast — but locked to its ecosystem</td>
+          </tr>
+          <tr>
+            <td>Custom static</td>
+            <td>Showcase &amp; portfolio sites</td>
+            <td class="tick">Total — built from scratch</td>
+            <td>Lowest — static hosting</td>
+            <td>Fast — if content stays simple</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:18px;font-size:12.5px;color:var(--muted)">This comparison is an illustrative recommendation for portfolio demonstration — pricing and features change over time and should be verified before a decision.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Process ===== -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How we work</p>
+      <h2>A clear, five-step process</h2>
+      <p>You always know what is happening, what is coming next and when it ships.</p>
+    </div>
+    <div class="process">
+      <div class="step reveal"><h3>Discover</h3><p>We learn your business, audience and goals — then map the pages and content you need.</p></div>
+      <div class="step reveal"><h3>Design</h3><p>Wireframes first, then polished visual design with your brand at the centre.</p></div>
+      <div class="step reveal"><h3>Build</h3><p>Responsive development with clean, maintainable code and fast performance.</p></div>
+      <div class="step reveal"><h3>Launch</h3><p>Testing across devices, SEO basics and a smooth, stress-free go-live.</p></div>
+      <div class="step reveal"><h3>Grow</h3><p>Analytics review and refinements as your business evolves.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Let’s talk about your new website</h2>
+      <p>Tell us about your business and we will come back with ideas — no obligation.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-copy reveal">
+        <p>Whether you need a one-page site to open doors or a full brand-and-website package, the first conversation is free and low-pressure.</p>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 6h16v12H4z M4 7l8 6 8-6"/></svg><span><b>Email</b><br>hello@tablepilot-studio.example — placeholder</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s-7-5.3-7-11a7 7 0 1 1 14 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span><b>Based in</b><br>Remote-first · working with UK &amp; global clients</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V7z"/></svg><span><b>Portfolio demonstration</b><br>This site is a concept showcase — no real enquiry is sent.</span></li>
+        </ul>
+      </div>
+      <form id="contactForm" class="reveal" novalidate>
+        <div class="field">
+          <label for="fName">Your name</label>
+          <input id="fName" name="name" type="text" placeholder="Jane Smith" required>
+        </div>
+        <div class="field">
+          <label for="fEmail">Email address</label>
+          <input id="fEmail" name="email" type="email" placeholder="jane@example.com" required>
+        </div>
+        <div class="field">
+          <label for="fMsg">About your business</label>
+          <textarea id="fMsg" name="message" placeholder="A few lines about your business and what you need…" required></textarea>
+        </div>
+        <button class="btn btn-gold" type="submit" style="width:fit-content">Send enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="form-note">Demonstration form — validation runs locally, nothing is submitted.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#top" aria-label="TablePilot home">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#A06A35"/><path d="M9 21.5 16 9.5l7 12h-3.7L16 14.6l-3.3 6.9z" fill="#FAF6EE"/></svg>
+        <span class="brand-name">Table<span>Pilot</span></span>
+      </a>
+      <p class="demo">Portfolio demonstration concept created by TablePilot for pitching purposes. Not an official website of any client brand; no affiliation implied.</p>
+    </div>
+    <div class="foot-copy">
+      <span>© 2026 TablePilot — Digital Design Studio</span>
+      <span>Made with care · Concept only</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status">Thank you — this is a demo form, so no enquiry was sent.</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* Mobile menu */
+  var btn = document.getElementById('menuBtn');
+  var links = document.getElementById('navLinks');
+  btn.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') {
+      links.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* Scroll reveal */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  var revealEls = document.querySelectorAll('.reveal:not(.in)');
+  revealEls.forEach(function(el){ io.observe(el); });
+
+  /* Demo contact form validation */
+  var form = document.getElementById('contactForm');
+  var toast = document.getElementById('toast');
+  var toastTimer;
+  function showToast(){
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 4200);
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('fName').value.trim();
+    var email = document.getElementById('fEmail').value.trim();
+    var msg = document.getElementById('fMsg').value.trim();
+    var validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    var valid = name.length > 1 && validEmail && msg.length > 5;
+    if (!valid) {
+      ['fName','fEmail','fMsg'].forEach(function(id){
+        var el = document.getElementById(id);
+        el.style.borderColor = el.value.trim() === '' || (id === 'fEmail' && !validEmail) ? '#C05A4A' : 'var(--line)';
+      });
+      return;
+    }
+    form.reset();
+    ['fName','fEmail','fMsg'].forEach(function(id){
+      document.getElementById(id).style.borderColor = 'var(--line)';
+    });
+    showToast();
+  });
+})();
+</script>
+</body>
+</html>
